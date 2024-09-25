@@ -1,0 +1,58 @@
+<!-- 9. Write a JavaScript program to find max of 5 number using nested if. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-9</title>
+</head>
+
+<body>
+
+    <script>
+        var a = 100, b = 50, c = 10, d = 60, f = 9;
+
+        if (a > b) {
+            if (a > c) {
+                if (a > d) {
+                    if (a > f) {
+                        console.log(`A is Max`);
+                    }
+                    else {
+                        console.log(`F is Max`);
+                    }
+                }
+                else {
+                    console.log(`D is Max`);
+                }
+            }
+            else {
+                console.log(`C is Max`);
+            }
+        }
+        else {
+            if(b>c){
+            if(b>d){
+                if(b>f){
+                    console.log(`B is Max`);
+                }
+                else{
+                    console.log(`F is Max`);
+                }
+
+           }
+           else{
+            console.log(`D is Max`);
+           }
+        }
+        else{
+            console.log(`C is Max`);
+        }
+    }  
+    </script>
+
+</body>
+
+</html>
