@@ -1,0 +1,33 @@
+<!-- 13.Write javascript program print out Fibonacci series. (0,1,1,2,3,5,8…) -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-13</title>
+</head>
+
+<body>
+
+    <script>
+        var n = 8;
+        var a = 0, b = 1;
+
+
+        document.write(`${a}${b}`);
+
+        for (var i = 3; i <= 8; i++) {
+            c = a + b;
+
+            document.write(`${c}`);
+            a = b;
+            b = c;
+
+        }
+    </script>
+
+</body>
+
+</html>

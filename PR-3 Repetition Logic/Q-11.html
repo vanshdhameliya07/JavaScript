@@ -1,0 +1,28 @@
+<!-- 11.Write javascript program Check weather num is prime or not using for loop -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-11</title>
+</head>
+
+<body>
+    <script>
+        var num = parseInt(prompt(`enter any number `));
+        var i = 1;
+        for (i = 1; i <= num; i++) {
+            if (num % 2 == 0) {
+                document.write(`<h1>prime number</h1>`);
+                break;
+            }
+            else {
+                document.write(`</h1>not prime number</h1>`);
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>
