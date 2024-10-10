@@ -1,0 +1,33 @@
+<!-- 4.Write a JavaScript program to find which number is greter in 4 numbers using ledder if else. (using no return with parameter function) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-4</title>
+</head>
+<body>
+    <script>
+
+        function ledder(a,b,c,d){
+             
+             if(a>b && a>c && a>d){
+                document.write(`A is greter`);
+             }
+             else if(b>a && b>c && b>d){
+                document.write(`B is greter`);
+             }
+             else if(c>a && c>b && c>d){
+                document.write(`C is greter`);
+             }
+             else{
+                document.write(`D is greter`);
+             }
+        }
+        ledder(122,22,32,58);
+
+    </script>
+    
+</body>
+</html>

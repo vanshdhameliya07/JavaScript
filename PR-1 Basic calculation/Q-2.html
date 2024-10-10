@@ -15,9 +15,11 @@
         var a = parseInt(prompt(`enter value of A :`));//10
         var b = parseInt(prompt(`enter value of B :`));//20
 
-        var c=a;
-        document.write(`a = ${a=b}`);//20
-        document.write(`B = ${b =c}`);//10
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        document.write(`Ans A = ${a}`);
+        document.write(`Ans B = ${b}`);
 
     </script>
 

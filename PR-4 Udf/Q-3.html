@@ -1,0 +1,48 @@
+<!-- 3.Write a JavaScript program to find which number is greter in 4 numbers using nested if else. (using simple function) -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-3</title>
+</head>
+
+<body>
+    <script>
+        function greter() {
+            var a=10,b=20,c=5000,d=50;
+            if (a > b){
+                  if(a>c){
+                         if(a>d){
+                                  document.write(`A is greter`);
+                         }
+                         else{
+                            document.write(`D is greter`);
+                         }
+                  }
+                  else{
+                    document.write(`C is greter`);
+                  }
+            }
+            else{
+                if(b>c){
+                    if(b>d){
+                        document.write(`B is greter`);
+                    }
+                    else{
+                        document.write(`D is greter`);
+                    }
+                }
+                else{
+                    document.write(`C is greter`);
+                }
+            }
+       }
+       greter();
+    </script>
+</body>
+
+</html>
