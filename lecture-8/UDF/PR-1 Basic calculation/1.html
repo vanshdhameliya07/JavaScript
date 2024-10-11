@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // TNRN
+        function addition() {
+            var a = 10, b = 20;
+            document.write(`<h1>addition = ${a + b}</h1>`);
+            document.write(`<h1><br>substraction = ${a - b}</br></h1>`);
+            document.write(`<h1><br>multipliaction = ${a * b}</br></h1>`);
+            document.write(`<h1>divison = ${a / b}</h1>`);
+        }
+        addition();
+
+        document.write(`<br><h1 style=color:red>2 take somthing return nothing</h1></br>`);
+
+        // TSRN
+        function substraction(a, b) {
+
+            document.write(`<h1>addition =${a + b}</h1>`);
+            document.write(`<h1>substraction =${a - b}</h1>`);
+            document.write(`<h1>multipliaction =${a * b}</h1>`);
+            document.write(`<h1>divison =${a / b}</h1>`);
+        }
+        substraction(10, 20);
+
+        document.write(`<br><h1 style=color:red>3 take nothing return somthing </h1></br>`);
+
+        //TNRS
+        function mul() {
+            var a = 10, b = 20;
+            document.write(`<h1>addition =${a + b}</h1>`);
+            document.write(`<h1>substraction =${a - b}</h1>`);
+            document.write(`<h1>multipliaction =${a * b}</h1>`);
+            document.write(`<h1>divison =${a / b}</h1>`);
+
+            return a, b;
+        }
+        mul();
+
+        document.write(`<br><h1 style=color:red>4 take somthing return somthing </h1></br>`);
+        //TSRS
+        function div(a, b) {
+            document.write(`<h1>addition =${a + b}</h1>`);
+            document.write(`<h1>substraction =${a - b}</h1>`);
+            document.write(`<h1>multipliaction =${a * b}</h1>`);
+            document.write(`<h1>divison =${a / b}</h1>`);
+            return a, b;
+        }
+        div(5, 5);
+    </script>
+</body>
+
+</html>

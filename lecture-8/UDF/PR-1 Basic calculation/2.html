@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write(`<br><h1 style=color:red>1 take nothing return nothing </h1></br>`);
+        function swapping() {
+            a = 10, b = 2;
+            document.write(`<h1>A = ${a}</h1>`);
+            document.write(`<h1>B = ${b}</h1>`); //a=8 
+            a = a + b;
+            b = a - b;
+            a = a - b;
+            document.write(`<h1>swap A  = ${a}</h1>`);
+            document.write(`<h1>swap B = ${b}</h1>`);
+
+        }
+        swapping();
+
+
+        document.write(`<br><h1 style=color:red>2 take somthing return nothing </h1></br>`);
+
+        function swap(a, b) {
+            document.write(`<h1> A = ${a}</h1>`);
+            document.write(`<h1> B = ${b}</h1>`); //a=8 
+            a = a + b;
+            b = a - b;
+            a = a - b;
+
+            document.write(`<h1>swap A = ${a}</h1>`);
+            document.write(`<h1>swap B = ${b}</h1>`);
+        }
+
+        swap(2, 1);
+
+        document.write(`<br><h1 style=color:red>3 take nothing return somthing </h1></br>`);
+
+        function sw() {
+            document.write(`<h1> A = ${a}</h1>`);
+            document.write(`<h1> B = ${b}</h1>`); //a=8 
+            a = a + b;
+            b = a - b;
+            a = a - b;
+
+            document.write(`<h1>swap A = ${a}</h1>`);
+            document.write(`<h1>swap B = ${b}</h1>`);
+
+            return a, b;
+        }
+        sw();
+
+        document.write(`<br><h1 style=color:blue>4 take somthing return somthing </h1></br>`);
+        function s(a, b) {
+            document.write(`<h1> A = ${a}</h1>`);
+            document.write(`<h1> B = ${b}</h1>`); //a=8 
+            a = a + b;
+            b = a - b;
+            a = a - b;
+
+            document.write(`<h1>swap A = ${a}</h1>`);
+            document.write(`<h1>swap B = ${b}</h1>`);
+
+            return a, b;
+        }
+        s(1,2)
+
+    </script>
+
+</body>
+
+</html>
