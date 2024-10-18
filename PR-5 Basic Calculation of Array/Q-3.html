@@ -1,0 +1,63 @@
+<!-- 3. find minummum number in array.  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-3</title>
+</head>
+
+<body>
+    <script>
+        var a = parseInt(prompt(`enter element A:`));
+        var b = parseInt(prompt(`enter element B:`));
+        var c = parseInt(prompt(`enter element C:`));
+        var d = parseInt(prompt(`enter element D:`));
+        var arr = [a, b, c, d];
+
+        for (i = 0; i < 5; i++) {
+            if (a < b) {
+                if (a < c) {
+                    if (a < d) {
+                        alert(`A is minimum`);
+                    }
+                    else {
+                        alert(`B is minimum`);
+                    }
+
+                }
+                else {
+                    if (c > d) {
+                        alert(`C is minimum`);
+                    }
+                    else {
+                        alert(`D is minimum`);
+                    }
+                }
+            } else {
+                if (b > c) {
+                    if (b > d) {
+                        alert(`B is minimum`);
+                    }
+                    else {
+                        alert(`D is minimum`);
+                    }
+                }
+                else {
+                    if(c>d){
+                        alert(`C is minimum`);
+                    }
+                    else{
+                        alert(`D is minimum`);
+                    }
+                   
+                }
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>

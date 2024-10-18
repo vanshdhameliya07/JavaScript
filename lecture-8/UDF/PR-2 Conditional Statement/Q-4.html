@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function greater() {
+            var a = 10, b = 5, c = 3, d = 2;
+            if (a > b && a > c && a > d) {
+                console.log(`A is greater `);
+            }
+            else if (b > a && b > c && b > d) {
+                console.log(`B is greater `);
+            }
+            else if (c > a && c > b && c > d) {
+                console.log(`C is greater `);
+            }
+            else if (d > a && d > b && d > c) {
+                console.log(`D is greater `);
+            }
+        }
+        greater();
+
+        function number(a, b, c, d) {
+            if (a > b && a > c && a > d) {
+                console.log(`A is greater `);
+            }
+            else if (b > a && b > c && b > d) {
+                console.log(`B is greater `);
+            }
+            else if (c > a && c > b && c > d) {
+                console.log(`C is greater `);
+            }
+            else if (d > a && d > b && d > c) {
+                console.log(`D is greater `);
+            }
+        }
+        number(10, 22, 32, 45);
+
+
+        function no() {
+            var a = 10, b = 50, c = 3, d = 2;
+            if (a > b && a > c && a > d) {
+                return `A is greater `;
+            }
+            else if (b > a && b > c && b > d) {
+                return `B is greater `;
+            }
+            else if (c > a && c > b && c > d) {
+                return `C is greater `;
+            }
+            else if (d > a && d > b && d > c) {
+                return `D is greater `;
+            }
+
+        }
+        ans = no();
+        console.log(`${ans}`);
+
+        function gr(a, b, c, d) {
+            if (a > b && a > c && a > d) {
+                return `A is greater `;
+            }
+            else if (b > a && b > c && b > d) {
+                return `B is greater `;
+            }
+            else if (c > a && c > b && c > d) {
+                return `C is greater `;
+            }
+            else if (d > a && d > b && d > c) {
+                return `D is greater `;
+            }
+        }
+       ans = gr(10,20,40,25)
+       console.log(`${ans}`);
+    </script>
+</body>
+
+</html>

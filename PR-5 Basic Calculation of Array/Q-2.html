@@ -1,0 +1,66 @@
+<!-- 2. find maximum number in array.  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-2</title>
+</head>
+
+<body>
+    <script>
+
+        var a = parseInt(prompt(`enter element A:`));
+        var b = parseInt(prompt(`enter element B:`));
+        var c = parseInt(prompt(`enter element C:`));
+        var d = parseInt(prompt(`enter element D:`));
+        var arr = [a, b, c, d];
+
+        for (i = 0; i <= 4; i++) {
+            if (a > b) {
+                if (a > c) {
+                    if (a > d) {
+                        alert(`A is maximum`);
+                    }
+                    else {
+                        alert(`D is maximum`);
+                    }
+
+                }
+                else {
+                    if (c > d) {
+                        alert(`C is maximum`);
+                    }
+                    else {
+                        alert(`D is maximum`);
+                    }
+                }
+
+            }
+            else {
+                if (b > c) {
+                    if (b > d) {
+                        alert(`B is big`);
+                    }
+                    else {
+                        alert(`D is big`);
+                    }
+                }
+                else {
+                    if (c > d) {
+                        alert(`C is big`);
+                    }
+                    else {
+                        alert(`D is big`);
+                    }
+                }
+            } 5
+
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!-- 12.remove duplicate element in array  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var arr = [1, 2, 3, 4, 1];
+        for (i = 0; i < 5; i++) {
+            console.log(arr[i]);
+        }
+
+        for (i = 0; i < 5; i++) {
+            for (j = i + 1; j < 5; j++) {
+                if (arr[i] != arr[j]) {
+                    console.log(` Duplicate element = ${arr[i]}`);
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
