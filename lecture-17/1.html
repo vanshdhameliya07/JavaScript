@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+
+<body>
+    <h1 align="center">table</h1>
+    <div align="center">
+        <select onchange="filterCity()" id="city">
+            <option value="">---select---</option>
+            <option value="surat">surat</option>
+            <option value="vapi">vapi</option>
+            <option value="valsad">valsad</option>
+        </select>
+    </div>
+    <table border="1" align="center" cellpadding="15">
+        <thead>
+            <tr>
+                <th>id </th>
+                <th> email</th>
+                <th>country </th>
+                <th>state</th>
+                <th>city</th>
+                <th>course</th>
+                <th>age</th>
+                <th>gender </th>
+                <th>phone </th>
+            </tr>
+        </thead>
+        <tbody id="msg">
+
+        </tbody>
+    </table>
+    <script>
+
+        var details = [{
+            id: 1,
+            email: "abc@gmail.com",
+            country: "india",
+            state: "gujarat",
+            city: "surat",
+            course: "javascript",
+            age: 25,
+            gender: "male",
+            phone: "1234567890",
+        },
+        {
+            id: 2,
+            email: "xyz@gmail.com",
+            country: "india",
+            state: "maharastra",
+            city: "vapi",
+            course: "java",
+            age: 28,
+            gender: "female",
+            phone: "52659998",
+        },
+        {
+            id: 2,
+            email: "xyz@gmail.com",
+            country: "india",
+            state: "gujarat",
+            city: "valsad",
+            course: "java",
+            age: 28,
+            gender: "female",
+            phone: "52659998",
+        },
+        ]
+
+        let filterData = [];
+
+        var viewRecord = (data) => {
+
+            if (data) {
+                var tbl = ``;
+                data.map((value, index) => {
+                    tbl += `
+                     <tr>
+                        <td>${value.id}</td>
+                        <td>${value.email}</td>
+                        <td>${value.country}</td>
+                        <td>${value.state}</td>
+                        <td>${value.city}</td>
+                        <td>${value.course}</td>
+                        <td>${value.age}</td>
+                        <td>${value.gender}</td>
+                        <td>${value.phone}</td>
+                      </tr>  
+            `
+                })
+            }
+            filterData = tbl;
+            document.getElementById('msg').innerHTML = filterData;
+        }
+        viewRecord();
+
+        const filterCity = () => {
+            let city = document.getElementById('city').value;
+            let d = details.filter(val => val.city === city);
+            filterData = d;
+            viewRecord(filterData);
+        }
+
+    </script>
+</body>
+
+</html>

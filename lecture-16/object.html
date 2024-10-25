@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 align="center">index</h1>
+    <table border="1" cellpadding="15" align="center">
+        <thead>
+            <tr>
+                <th>index</th>
+                <th>name</th>
+                <th>age</th>
+                <th>email</th>
+                <th>gender</th>
+            </tr>
+        </thead>
+        <tbody id="msg">
+
+        </tbody>
+    </table>
+
+
+    <script>
+        var details = [{
+            name: `vansh`,
+            age: 58,
+            gmail: `vanshdhameliya07@gmail.com`,
+            gender: `male`,
+
+        },
+        {
+            name: `ansh`,
+            age: 25,
+            gmail: `ansh@gmail.com`,
+            gender: `male`,
+        }]
+
+        var tbl = ``;
+        details.map((val, index) => {
+            tbl += `
+               <tr>
+                 
+                <td>${++index}</td>
+                <td>${val.name}</td>
+                <td>${val.age}</td>
+                <td>${val.email}</td>
+                <td>${val.gender}</td>
+
+                </tr>
+
+                `;
+        })
+        document.getElementById("msg").innerHTML = tbl;
+    </script>
+</body>
+
+</html>
