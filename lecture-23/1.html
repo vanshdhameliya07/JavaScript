@@ -1,0 +1,23 @@
+<script>
+
+    class car {
+        constructor(color) {
+            this.carcolor = color;
+        }
+        pr() {
+            return `color ${this.carcolor}`
+        }
+    }
+    class numberplate extends car {
+        constructor(color, plate) {
+            super(color)
+            this.numberplate = plate;
+        }
+        show() {
+            return `${this.pr()} number plate ${this.numberplate}`
+        }
+    }
+    var o = new numberplate(`red`, `GJ5468`);
+    document.write(`${o.show()}`);
+
+</script>

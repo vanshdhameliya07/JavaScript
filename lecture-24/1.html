@@ -1,0 +1,25 @@
+<script type="text/javascript">
+
+
+    class parent {
+
+        sum() {
+            console.log(`sum`);
+        }
+    }
+    class child extends parent {
+        min() {
+            console.log(`min`);
+        }
+    }
+    class superchild extends child {
+        mul() {
+            console.log(`mul`);
+        }
+    }
+    let o = new superchild;
+    o.sum();
+    o.min();
+    o.mul();
+    
+</script>

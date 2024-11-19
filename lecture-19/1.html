@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<table border="1" align="center" cellpadding="5">
+    <tr>
+        <td> <label>first name : </lable>
+                <input type="text">
+                <span id="name" class="onchange" style="color: red;"></span>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label>email</lable>
+                <input type="email" id="email is required">
+                <span id="email" style="color: red;" class="onchanges">name is required</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="msg">
+                submit
+            </button>
+        </td>
+    </tr>
+</table>
+
+
+<body>
+
+    <script>
+        document.getElementById("msg").addEventListener("click", function () {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            if (!name) {
+                document.getElementById(`name`).innerHTML = `name is require`
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

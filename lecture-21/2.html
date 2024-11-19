@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<table border="1" align="center">
+
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>phone</th>
+        </tr>
+
+    </thead>
+    <tbody id="record">
+
+    </tbody>
+</table>
+
+<body>
+    <script>
+
+
+
+        let user = [{ id: 1, name: `yash`, phone: `5466566` },
+        { id: 2, name: `anurag`, phone: `5659895` }
+        ];
+        console.log(user);
+
+        var tbl = ``;
+        user.map((v, i) => {
+            tbl += `
+            <tr>
+                <td>${v.id}</td>
+                <td>${v.name}</td>
+                <td>${v.phone}</td>
+            </tr>    
+            `
+        })
+        document.getElementById(`record`).innerHTML = tbl;
+    </script>
+</body>
+
+</html>

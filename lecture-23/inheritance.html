@@ -1,0 +1,23 @@
+<script text="javascript/text">
+    class car {
+        constructor(brand) {
+            this.carbrand = brand;
+        }
+        pr() {
+            return `i have a ${this.carbrand}`;
+        }
+
+    }
+    class model extends car {
+        constructor(brand, mod) {
+            super(brand);
+            this.model = mod;
+        }
+        show() {
+            return `${this.pr()} its model ${this.model}`;
+        }
+    }
+    let mycar = new model(`tata`, `herrier`);
+    console.log(`${mycar.show()}`);
+
+</script>
