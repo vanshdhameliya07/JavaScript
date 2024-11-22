@@ -2,7 +2,6 @@
 
 
     class parent {
-
         sum() {
             console.log(`sum`);
         }
@@ -17,9 +16,14 @@
             console.log(`mul`);
         }
     }
+    class mchild extends superchild {
+        div() {
+            console.log(`div`);
+        }
+    }
     let o = new superchild;
     o.sum();
     o.min();
     o.mul();
-    
+
 </script>

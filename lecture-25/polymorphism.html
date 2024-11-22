@@ -1,0 +1,29 @@
+<script type="text/javascript">
+
+    class a {
+        sum() {
+            let a = 10, b = 20;
+            console.log(a + b);
+        }
+    }
+    class b extends a {
+        sum() {
+            let a = 10, b = 50;
+            console.log(a - b);
+        }
+    }
+    class c extends b {
+        sum() {
+            let a = 10, b = 50;
+            console.log(a * b);
+        }
+    }
+    let obj1 = new a();
+    let obj2 = new b();
+    let obj3 = new c();
+    obj1.sum();
+    obj2.sum();
+    obj3.sum();
+
+
+</script>
