@@ -1,10 +1,11 @@
 <script type="text/javascript">
 
-    var cnt = 0
+    var cnt = 0;
     setInterval(() => {
-        cnt++;
-        document.write(`No : ${cnt} hello`);
-
-    })
+        if (cnt < 10) {
+            cnt++;
+            document.write(`  <h2>${cnt} :- Hello</h2>`);
+        }
+    }, 1000);
 
 </script>

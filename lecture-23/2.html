@@ -1,0 +1,23 @@
+<script>
+    class my {
+        constructor(tyre) {
+            this.cartyre = tyre;
+        }
+        pr() {
+            return `tyre ${this.cartyre}`
+        }
+    }
+    class ac extends my {
+        constructor(tyre, ac) {
+            super(tyre)
+            this.ac = ac;
+        }
+
+        show() {
+            return `${this.pr()} ac on ${this.ac}`
+        }
+    }
+    var o = new ac(`aswe`, `5 star ac`);
+    console.log(`${o.show()}`);
+
+</script>

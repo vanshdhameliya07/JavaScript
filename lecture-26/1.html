@@ -1,0 +1,14 @@
+<button onclick="clearTime()">stop</button>
+<script type="text/javascript">
+    let cnt = 0;
+    let msg = () => {
+        cnt++;
+        console.log(cnt);
+    }
+    
+    let abc = setInterval(msg, 1000);
+    const clearTime = () => {
+        clearInterval(abc);
+    }
+
+</script>

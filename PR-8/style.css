@@ -1,0 +1,40 @@
+.coundown .plus{
+    width: 75px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: green;
+    font-size: 24px;
+    color: white;
+    border: none;
+    margin-right: 15px;
+}
+
+.coundown .minus{
+    width: 75px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: green;
+    font-size: 24px;
+    color: white;
+    border: none;
+    margin-left: 15px;
+}
+.coundown .count{
+    width: 75px;
+    height: 36px;
+    background-color: #F7D2CE;
+    border: none;
+    border-radius: 10px;
+    font-size:24px;
+    font-weight: 500;
+}
+.coundown .reset{
+    width: 75px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: green;
+    font-size: 18px;
+    color: white;
+    border: none;
+    margin-top: 15px;
+}

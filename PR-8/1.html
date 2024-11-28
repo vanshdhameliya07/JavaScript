@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div align="center" class="coundown">
+        <h1>counter app</h1>
+        <button id="plus" class="plus" onclick="plus()">+</button>
+        <button id="count" class="count" onclick="count()">0</button>
+        <button id=" minus" class="minus" onclick="minus()">-</button>
+        <button onclick="reset()" class="reset" style="display: block;">reset</button>
+    </div>
+
+
+    <script>
+        var count = 0;
+        function plus() {
+            count++;
+            document.getElementById("count").innerHTML = count;
+        }
+        function minus() {
+            count--;
+            document.getElementById("count").innerHTML = count;
+        }
+        function reset() {
+            count = 0;
+            document.getElementById("count").innerHTML = 0;
+        }
+    </script>
+</body>
+
+</html>
