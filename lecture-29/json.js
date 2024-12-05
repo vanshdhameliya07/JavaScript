@@ -36,7 +36,7 @@ let savedata = () => {
     document.getElementById('phone').value = '';
 
 }
-viewrecord();
+
 
 const deleteuser = (deleteid) => {
     let d = record.filter((val) => {
@@ -44,5 +44,6 @@ const deleteuser = (deleteid) => {
     });
     localStorage.setItem('user', JSON.stringify(d));
     alert(`record delete`)
+    viewrecord();
     console.log(d)
 }
