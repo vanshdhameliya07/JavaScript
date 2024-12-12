@@ -3,28 +3,31 @@ let product = [
           id: 1,
           name: "IWC Schaffhausen",
           img: "https://img.tatacliq.com/images/i19//658Wx734H/MP000000023041620_658Wx734H_202407262021321.jpeg",
-          qty: 5,
+          qty: 1,
+          rupee: 700000,
           price: 10.99
      },
      {
           id: 2,
           name: "IWC Schaffhausen",
           img: "https://img.tatacliq.com/images/i18//658Wx734H/MP000000016577285_658Wx734H_202406301656021.jpeg",
-          qty: 5,
+          qty: 2,
+          rupee: 10000,
           price: 9.99
      },
      {
           id: 3,
           name: "IWC Schaffhausen",
           img: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSpast0oMZKd_cFBy3xgrejOXO2isNZw_sDI0jdaNJf9dM-m-8HndWx_QCC2Q5yJqZuodArG8daxeoS8TO-c6dGHOBFaczI1zzJftW8E-tNcrvi3nxA8zRvC6aAzW6OtHOfaY1aLg&usqp=CAc",
-          qty: 5,
-          price: 5
+          qty: 6,
+          rupee: 100000,
+          price: 49999
      },
      {
           id: 4,
           name: "Astronomia Tourbillon Regulator",
           img: "https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/j/a/jacob-co-astronomia-regulator-ar200-40-aa-ac-abala-large.jpg",
-          qty: 5,
+          rupee: 70000000,
           price: 5555
      }
 
@@ -39,9 +42,10 @@ product.map((val) => {
              <img src="${val.img}" style="object-fit:contain; height:200px;" class="card-img-top" alt="...">
              <div class="card-body">
               <p class="card-text">wath name: ${val.name}</p>
-                 <p class="card-text">Rs.${val.price}</p>
+                 <p class="card-text">Rs.${val.rupee}</p>
+                 <p class="card-text">qty: ${val.qty}</p>
                  <p class="card-text">Price: $${val.price}</p>
-                 <p class="card-text">qty: $${val.qty++}</p>
+                 
                 
                  <button onclick="addcart(${val.id})">Add to Cart</button>
              </div>

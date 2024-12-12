@@ -1,0 +1,51 @@
+<table align="center" border="1" cellpadding="10">
+    <thead>
+        <tr>
+            <td>id</td>
+            <td>title</td>
+            <td>userid</td>
+            <td>view</td>
+            <td>tags</td>
+            <td>reactions</td>
+            <td>reactions</td>
+        </tr>
+    </thead>
+    <tbody id="post">
+    </tbody>
+</table>
+
+<script>
+
+    const post = () => {
+        fetch('https://dummyjson.com/post')
+            .then(r => r.json())
+            .then((res) => {
+                let posts = res.posts
+                console.log(posts)
+
+                let tbl = ``
+                posts.map((p, i) => {
+                    tbl += `
+                      <tr>
+                        <td>${p.id}</td>
+                        <td>${p.title}</td>
+                        <td>${p.userId}</td>
+                        <td>${p.views}</td>
+                        <td>${p.tags}</td>
+                        <td>like :${p.reactions.likes}</td>
+                        <td>dislike :${p.reactions.dislikes}</td>
+
+                      </tr>`
+
+                })
+                document.getElementById(`post`).innerHTML = tbl;
+
+            })
+            .catch((err) => {
+                console.log(err);
+                return false;
+
+            })
+    }
+    post()
+</script>
