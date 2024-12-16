@@ -12,6 +12,7 @@
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
+            color: #333;
         }
 
         .container {
@@ -19,22 +20,41 @@
             margin: 20px auto;
             background: #fff;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
         }
 
         h1 {
             text-align: center;
-            color: #333;
+            font-size: 24px;
+            color: #222;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            padding: 10px 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .comment {
+            display: flex;
+            gap: 15px;
             border-bottom: 1px solid #ddd;
             padding: 15px 0;
+            align-items: center;
         }
 
         .comment:last-child {
             border-bottom: none;
+        }
+
+        .comment img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #ddd;
         }
 
         .comment h3 {
@@ -49,10 +69,42 @@
             margin: 0;
         }
 
+        .comment:hover {
+            background: #f9f9f9;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
         .loading {
             text-align: center;
             color: #666;
             font-size: 16px;
+        }
+
+        .error {
+            text-align: center;
+            color: #d9534f;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .comment {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .comment img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .comment h3 {
+                font-size: 16px;
+            }
+
+            .comment p {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -74,11 +126,15 @@
                     let comments = data.comments;
                     let commentsContainer = $('#comments');
 
+
                     comments.forEach(comment => {
                         commentsContainer.append(`
                             <div class="comment">
-                                <h3>${comment.user.username}</h3>
-                                <p>${comment.body}</p>
+                                <img src="https://via.placeholder.com/50?text=${comment.user.username.charAt(0).toUpperCase()}" alt="${comment.user.username}">
+                                <div>
+                                    <h3>${comment.user.username}</h3>
+                                    <p>${comment.body}</p>
+                                </div>
                             </div>
                         `);
                     });

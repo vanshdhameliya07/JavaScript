@@ -43,30 +43,65 @@
         .weather-container h1 {
             margin-bottom: 20px;
         }
+
+        .city-input {
+            margin-bottom: 20px;
+        }
+
+        .city-input input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        .city-input button {
+            padding: 10px 15px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .city-input button:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 
 <body>
     <div class="weather-container">
         <h1>Weather Forecast</h1>
-        <div id="weather-content">Loading...</div>
+        <div class="city-input">
+            <input type="text" id="city" placeholder="Enter city name" />
+            <button onclick="fetchWeather()">Get Weather</button>
+        </div>
+        <div id="weather-content">Enter a city to view the forecast.</div>
     </div>
 
     <script>
-        const whether = () => {
+        // Function to fetch weather data
+        const fetchWeather = () => {
+            // Get city name from input
+            const city = document.getElementById("city").value.trim();
+
+
+
+
             $.ajax({
                 method: "GET",
-                url: `http://api.weatherapi.com/v1/forecast.json?key=fd4c8517f7df4970a5465042241312&q=surat&days=1&aqi=no&alerts=no`,
+                url: `https://api.weatherapi.com/v1/forecast.json?key=fd4c8517f7df4970a5465042241312&q=${city}&days=1&aqi=no&alerts=no`,
                 success: function (data) {
                     let forecast = data.forecast.forecastday;
+
 
                     let tbl = `<table>
                         <tr>
                             <th>Date</th>
                             <th>Condition</th>
-                            <th>Average Temperature (°C)</th>
+                            <th>Average Temperature (&#8451;)</th>
                         </tr>`;
-
 
                     forecast.forEach(day => {
                         tbl += `<tr>
@@ -82,8 +117,6 @@
 
             });
         };
-
-        whether();
     </script>
 </body>
 
