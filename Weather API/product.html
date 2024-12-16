@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .product-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-5">Product Showcase</h1>
+        <div id="product" class="row g-4">
+
+        </div>
+    </div>
+
+
+    <script>
+        const product = () => {
+            fetch('https://dummyjson.com/products')
+                .then(p => p.json())
+                .then((pro) => {
+                    let products = pro.products;
+                    let cards = '';
+
+                    products.forEach((p) => {
+                        cards += `
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                <div class="card product-card h-100">
+                                    <img src="${p.images[0]}" class="card-img-top" alt="${p.title}" style="height: 200px; object-fit: contain;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${p.brand}</h5>
+                                        <p class="card-text text-muted">${p.category}</p>
+                                        <p class="text-success mb-1"><strong>Discount: ${p.discountPercentage}%</strong></p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <button class="btn btn-primary btn-sm">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    document.getElementById('product').innerHTML = cards;
+                });
+        }
+        product();
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -27,6 +27,7 @@ let product = [
           id: 4,
           name: "Astronomia Tourbillon Regulator",
           img: "https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/j/a/jacob-co-astronomia-regulator-ar200-40-aa-ac-abala-large.jpg",
+          qty: 4,
           rupee: 70000000,
           price: 5555
      }
@@ -45,8 +46,6 @@ product.map((val) => {
                  <p class="card-text">Rs.${val.rupee}</p>
                  <p class="card-text">qty: ${val.qty}</p>
                  <p class="card-text">Price: $${val.price}</p>
-                 
-                
                  <button onclick="addcart(${val.id})">Add to Cart</button>
              </div>
          </div>

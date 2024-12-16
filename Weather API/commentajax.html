@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments UI</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .comment {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+
+        .comment:last-child {
+            border-bottom: none;
+        }
+
+        .comment h3 {
+            font-size: 18px;
+            margin: 0 0 5px;
+            color: #444;
+        }
+
+        .comment p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        .loading {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>User Comments</h1>
+        <div id="comments">
+            <p class="loading">Loading comments...</p>
+        </div>
+    </div>
+
+    <script>
+        const comment = () => {
+            $.ajax({
+                method: 'GET',
+                url: 'https://dummyjson.com/comments',
+                success: (data) => {
+                    let comments = data.comments;
+                    let commentsContainer = $('#comments');
+
+                    comments.forEach(comment => {
+                        commentsContainer.append(`
+                            <div class="comment">
+                                <h3>${comment.user.username}</h3>
+                                <p>${comment.body}</p>
+                            </div>
+                        `);
+                    });
+                },
+
+            });
+        };
+
+        comment();
+    </script>
+</body>
+
+</html>

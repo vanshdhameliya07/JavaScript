@@ -13,12 +13,14 @@
     font-weight: 700;
     text-transform: capitalize;
 }
-.nav ul li button{
+.nav .container .row button{
     background-color: #4CAF50;
     border: none;
     padding: 10px 10px;
     border-radius: 10px;
     cursor: pointer;
+    
+    
 }
 .justify-end {
     justify-content: flex-end;

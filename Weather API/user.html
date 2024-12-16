@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Table</title>
+    <style>
+       
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        table thead {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: left;
+        }
+
+        table thead tr th {
+            padding: 15px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        table tbody tr {
+            transition: background-color 0.3s;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        table tbody td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table tbody td img {
+            border-radius: 50%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>User Information</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Address</th>
+                    <th>Category</th>
+                    <th>Discount Percentage</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody id="user">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const user = () => {
+            fetch('https://dummyjson.com/users')
+                .then(u => u.json())
+                .then((use) => {
+                    let users = use.users;
+                    console.log(users);
+
+                    let tbl = '';
+                    users.forEach((user) => {
+                        tbl += `
+                            <tr>
+                                <td>${user.id}</td>
+                                <td>${user.address.city}, ${user.address.state}</td>
+                                <td>${user.company.department}</td>
+                                <td>${user.company.title}</td>
+                                <td><img src="${user.image}" style="width: 50px;"></td>
+                            </tr>
+                        `;
+                    });
+
+                    document.getElementById('user').innerHTML = tbl;
+                });
+        }
+        user();
+    </script>
+</body>
+</html>
