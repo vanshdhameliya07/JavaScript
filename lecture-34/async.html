@@ -1,0 +1,46 @@
+<table border="1" align="center" cellpadding="10">
+    <thead>
+        <tr>
+            <td>id</td>
+            <td>quote</td>
+            <td>author</td>
+
+        </tr>
+    </thead>
+    <tbody id="myTable">
+
+    </tbody>
+</table>
+
+
+
+
+
+<script type="text/javascript">
+
+    let getuser = async () => {
+        try {
+            let res = await fetch('https://dummyjson.com/quotes');
+            let data = await res.json();
+            console.log(data);
+
+            let tbl = ``;
+            data.quotes.forEach((item, index) => {
+                tbl += `<tr>
+                    <td>${item.id}</td>
+                    <td>${item.quote}</td>
+                    <td>${item.author}</td>
+                    
+                    </tr>`;
+
+                document.getElementById("myTable").innerHTML = tbl;
+            })
+
+        } catch (error) {
+            console.log(error);
+            return false
+        }
+    }
+
+    getuser()
+</script>

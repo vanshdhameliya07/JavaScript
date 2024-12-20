@@ -70,7 +70,7 @@ let updatedata = () => {
             val.name = name;
             val.phone = phone;
         }
-        return val
+        return val;
     })
     localStorage.setItem(`record`, JSON.stringify(up));
     alert(`record updated`);

@@ -44,6 +44,7 @@
                 </tr>
             </thead>
             <tbody id="record"></tbody>
+
         </table>
         <button onclick="logoutuser()">logout</button>
     </div>
@@ -51,9 +52,9 @@
     <script src="watchman.js"></script>
     <script>
         const logoutuser = () => {
-              localStorage.removeItem(`checkuser`);
-              alert(`logout successfully `)
-              window.location.href=`./login.html`
+            localStorage.removeItem(`checkuser`);
+            alert(`logout successfully `)
+            window.location.href = `./login.html`
         }
     </script>
 </body>

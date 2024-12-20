@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" align="center" cellpadding="10">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>firstName</td>
+                <td>lastName</td>
+                <td>maidenName</td>
+                <td>age </td>
+            </tr>
+        </thead>
+        <tbody id="po">
+
+        </tbody>
+    </table>
+</body>
+
+</html>
+
+
+
+<script type="text/javascript">
+
+    const post = async () => {
+        try {
+            let res = await fetch('https://dummyjson.com/users');
+            let data = await res.json();
+            console.log(data);
+
+            let tbl = ``;
+            data.users.map((v, i) => {
+                tbl += `
+                <tr>
+                    <td>${v.id}</td>
+                    <td>${v.firstName}</td>
+                    <td>${v.lastName}</td>
+                    <td>${v.maidenName}</td>
+                    <td>${v.age}</td>
+
+                </tr>
+                       `
+            })
+            document.getElementById('po').innerHTML = tbl;
+
+        } catch (error) {
+            console.log(error);
+            return false
+        }
+    }
+
+    post();
+
+</script>

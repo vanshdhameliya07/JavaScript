@@ -10,8 +10,8 @@ let login = () => {
 
     if (check == 0) {
         alert(`invalid email and password please check`)
-
     }
+    
     else {
         localStorage.setItem(`check`, JSON.stringify(check[0]));
         window.location.href = `./dashboard.html`;

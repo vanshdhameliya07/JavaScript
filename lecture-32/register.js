@@ -14,7 +14,8 @@ let register = () => {
     }
     console.log(record)
     record.push(obj);
-    localStorage.setItem(`record`,JSON.stringify(record))
+    localStorage.setItem(`record`, JSON.stringify(record))
     alert(` user successfully register`)
+    window.location.href = `./login.html`
 
 }
