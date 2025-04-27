@@ -9,6 +9,6 @@ console.log(`A sum ${a + b}`);
 document.getElementById(`msg`).innerHTML = `sum =  ${a + b}`;
 
 
-var a =true;
+var a = true;
 console.log(`A = ${a}`);
-console.log(typeof(a));
+console.log(typeof (a));

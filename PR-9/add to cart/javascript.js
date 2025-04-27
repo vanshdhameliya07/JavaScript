@@ -56,6 +56,8 @@ document.getElementById("product").innerHTML = tbl;
 
 let cart = [];
 let addcart = ((id) => {
+     console.log(id)
+
      product.map((val) => {
           if (val.id == id) {
                cart.push(val);

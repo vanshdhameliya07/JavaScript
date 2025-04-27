@@ -4,20 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Arrow function</title>
 </head>
 
 <body>
-    <script>
-        var a = 10, b = 200;
 
-        if (a > b) {
-            console.log(`a is big`)
+    <script>
+
+        let sum = (a, b) => {
+            return a + b
+
         }
-        else if(`a<b`){
-            console.log(`b is big`)
-        }
+
+        let ans = sum(5, 10)
+        document.write(`sum :- ${ans}`)
     </script>
+
 </body>
 
 </html>

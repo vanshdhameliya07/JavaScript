@@ -3,12 +3,13 @@ var cart = [];
 const viewcart = () => {
     cart = localStorage.getItem(`cart`) ? JSON.parse(localStorage.getItem(`cart`)) : [];
 
+
     let tbl = ``;
     cart.map((val, i) => {
 
         let sum = 0;
         sum = sum + val.qty * val.price
-        
+
         tbl += `
         <tr>
 
@@ -36,7 +37,6 @@ let deleteuser = (id) => {
     });
     localStorage.setItem(`cart`, JSON.stringify(d));
     alert(`Record deleted`);
-    console.log(d)
     viewcart();
 };
 
@@ -48,7 +48,6 @@ const addupdate = (id) => {
         }
         return val;
     });
-    console.log(up)
     localStorage.setItem(`cart`, JSON.stringify(up));
     alert(`add to cart`);
     viewcart();
