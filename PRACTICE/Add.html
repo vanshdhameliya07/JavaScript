@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+
+    <div align="center">
+        <table border="1" align="center">
+            <h1 align="center">Add user</h1>
+            <thead>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" id="name"></td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td><input type="text" id="email"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button onclick="handleSubmit()">Submit</button></td>
+                </tr>
+            </thead>
+
+        </table>
+        <a align="center" href="view.html">view</a>
+
+    </div>
+</body>
+<script>
+    let handleSubmit = () => {
+        let name = document.getElementById('name').value
+        let email = document.getElementById('email').value
+        let oldrecord = JSON.parse(localStorage.getItem('users')) || []
+        let obj = {
+            id: Math.floor(Math.random() * 100),
+            name,
+            email
+        }
+        oldrecord.push(obj)
+        localStorage.setItem('users', JSON.stringify(oldrecord))
+        alert("User added successfully!");
+        document.getElementById('name').value = ""
+        document.getElementById('email').value = ""
+    }
+
+</script>
+
+</html>
