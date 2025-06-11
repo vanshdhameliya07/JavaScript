@@ -50,7 +50,7 @@
         },
         {
             id: 2,
-            email: "xyz@gmail.com",
+            email: "ddd@gmail.com",
             country: "india",
             state: "maharastra",
             city: "vapi",
@@ -74,6 +74,7 @@
 
         let filterData = [];
 
+
         var viewRecord = (data) => {
 
             if (data) {
@@ -94,14 +95,17 @@
             `
                 })
             }
-            filterData = tbl;
+
+            filterData = tbl
+
             document.getElementById('msg').innerHTML = filterData;
         }
         viewRecord();
 
         const filterCity = () => {
             let city = document.getElementById('city').value;
-            let d = details.filter(val => val.city === city);
+
+            let d = details.filter(value => value.city === city);
             filterData = d;
             viewRecord(filterData);
         }
