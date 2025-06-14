@@ -45,19 +45,22 @@
 
     const handleSubmit = () => {
         let single = JSON.parse(localStorage.getItem('single'));
-        let users = JSON.parse(localStorage.getItem('users')) || [];
+        let users = JSON.parse(localStorage.getItem('user')) || [];
+
         let updatedUser = {
             id: single.id,
             name: document.getElementById('name').value,
             email: document.getElementById('email').value
         };
 
-        let updatedUsers = users.map(user => user.id === single.id ? updatedUser : user);
 
-        localStorage.setItem('users', JSON.stringify(updatedUsers));
+        let updatedUsers = users.map(user => user.id === single.id ? updatedUser : user);
+        console.log(updatedUsers);
+
+
+        localStorage.setItem('user', JSON.stringify(updatedUsers));
 
         alert("User updated successfully!");
-        window.location.href = "view.html";
     };
 </script>
 

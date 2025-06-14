@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add </title>
+</head>
+
+<body>
+    <div align="center">
+        <h1>Add user</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" id="name"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" id="email"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button onclick="handlesubmit()" type="submit">submit</button></td>
+                </tr>
+            </thead>
+        </table>
+        <a href="view.html">view</a>
+    </div>
+</body>
+<script>
+    let handlesubmit = () => {
+        let user = JSON.parse(localStorage.getItem('user')) || []
+
+        let name = document.getElementById('name').value
+        let email = document.getElementById('email').value
+
+        let obj = {
+            id: Math.floor(Math.random() * 1000),
+            name,
+            email,
+        }
+        user.push(obj)
+        localStorage.setItem('user', JSON.stringify(user))
+        alert("form submited")
+        window.location.href = "view.html"
+
+
+    }
+</script>
+
+</html>

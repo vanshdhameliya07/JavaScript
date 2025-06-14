@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div align="center">
+        <h1>View User</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody id="record">
+
+            </tbody>
+        </table>
+        <a href="Add.html">Add</a>
+    </div>
+</body>
+<script>
+    let getUser = () => {
+        let record = JSON.parse(localStorage.getItem('user')) || []
+
+        let tbl = ""
+        record.map((val) => {
+            let { id, name, email } = val
+            tbl += `
+            <tr>
+                <td>${id}</td>
+                <td>${name}</td>
+                <td>${email}</td>
+                <td>
+                    <button onclick="Deleteuser(${id})">Delete</button>
+                    <button onclick="Edituser(${id})">Edit</button>
+                </td>
+            </tr>
+           `
+
+        })
+        document.getElementById('record').innerHTML = tbl
+
+    }
+    getUser()
+
+    let Deleteuser = (id) => {
+        let record = JSON.parse(localStorage.getItem('user')) || []
+        let deleteUser = record.filter(val => val.id != id)
+        localStorage.setItem('user', JSON.stringify(deleteUser))
+        alert("record delete")
+        getUser()
+
+    }
+    let Edituser = (id) => {
+        let record = JSON.parse(localStorage.getItem('user')) || []
+
+        let single = record.find(val => val.id == id)
+        localStorage.setItem('single', JSON.stringify(single))
+
+        record.push(single)
+        window.location.href = "edit.html"
+    }
+
+
+</script>
+
+</html>
